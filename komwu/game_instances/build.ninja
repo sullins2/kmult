@@ -1,0 +1,38 @@
+rule kuhn
+    command = kuhn -n $n -r $r -o $out
+
+rule leduc
+    command = leduc -n $n -r $r -c $c --max-raises $b -o $out
+
+rule ld
+    command = liars_dice -n $n -d 1 -f $f -o $out
+
+rule goof
+    command = goofspiel -n $n -h 3 -o $out
+
+rule goof_limited
+    command = goofspiel --limited-information -n $n -h 3 -o $out
+
+build K23.game: kuhn
+    n = 2
+    r = 3
+
+build K312.game: kuhn
+    n = 3
+    r = 12
+
+build K45.game: kuhn
+    n = 4
+    r = 5
+
+build L3133.game: leduc
+    n = 3
+    b = 1
+    r = 3
+    c = 3
+
+build L4133.game: leduc
+    n = 4
+    b = 1
+    r = 3
+    c = 3
